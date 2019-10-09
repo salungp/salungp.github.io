@@ -55,7 +55,49 @@ nav {
 	background: #fff;
 	left: 0;
 	border-top: 0;
-	z-index: 3;
+	z-index: 6;
+}
+
+header {
+	position: relative;
+}
+
+.nav-dropdown {
+	position: absolute;
+	background: #fff;
+	z-index: 5;
+	box-shadow: 0 3px 7px rgba(0,0,0,.1);
+	left: 20%;
+	padding: 10px 0;
+	border-top: 2px solid #333;
+}
+
+.nav-dropdown a, .nav-dropdown button {
+	display: block;
+	border: none;
+	outline: none;
+	background: #fff;
+	transition: .3s;
+	text-decoration: none;
+	color: #333;
+	padding: 12px 20px;
+}
+
+.nav-dropdown a:hover, .nav-dropdown button:hover {
+	background: #f2f2f2;
+}
+
+.dropdown-inside {
+	position: relative;
+	background: #fff;
+}
+
+.dropdown-inside-link {
+	position: absolute;
+	box-shadow: 0 3px 7px rgba(0,0,0,.1);
+	background: #fff;
+	top: 0;
+	border-top: 2px solid #333;
 }
 
 .nav-top {
@@ -91,6 +133,11 @@ nav {
 	padding: 0;
 }
 
+header {
+	position: relative;
+	z-index: 10;
+}
+
 .nav-bottom {
 	display: flex;
 	align-items: center;
@@ -106,6 +153,12 @@ nav {
 .nav-bottom a:hover {
 	text-decoration: none;
 	color: #222;
+}
+
+.nav-active-link {
+	position: fixed;
+	top: 46px;
+	z-index: 7;
 }
 
 .nav-logo:hover {
@@ -125,6 +178,10 @@ nav {
 	justify-content: center;
 }
 
+.news {
+	min-width: 86px;
+}
+
 .navbar-link {
 	display: inline-block;
 	padding: 10px 12px;
@@ -134,6 +191,10 @@ nav {
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 15px;
+}
+
+.navbar-link i, .dropdown-inside button i {
+	font-size: 13px;
 }
 
 .navbar-link:hover {
@@ -151,7 +212,7 @@ nav {
 	background: rgba(0,0,0,.9);
 	left: 0;
 	top: 0;
-	z-index: 4;
+	z-index: 999;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -164,6 +225,12 @@ nav {
 	color: #fff;
 	font-size: 26px;
 	border-bottom: 1px solid rgba(255,255,255,.7);
+}
+
+@media (max-width: 768px) {
+	.search-form input {
+		width: 80%;
+	}
 }
 
 .close-form {
@@ -735,6 +802,10 @@ footer .copyright {
 		display: block;
 	}
 
+	.sidebar-subscribe input {
+		width: 60%;
+	}
+
 	.article {
 		display: block;
 	}
@@ -763,5 +834,13 @@ footer .copyright {
 
 	footer ul {
 		display: none;
+	}
+
+	.footer-logo {
+		display: none;
+	}
+
+	.copyright {
+		text-align: left;
 	}
 }
